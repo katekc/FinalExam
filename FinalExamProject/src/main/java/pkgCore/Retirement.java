@@ -13,7 +13,6 @@ public class Retirement {
 	//TODO: Build the contructor, getters and setters for the attributes above.
 	public Retirement(int iYearsToWork, double dAnnualReturnWorking, int iYearsRetired, double dAnnualReturnRetired,
 			double dRequiredIncome, double dMonthlySSI) {
-		super();
 		this.iYearsToWork = iYearsToWork;
 		this.dAnnualReturnWorking = dAnnualReturnWorking;
 		this.iYearsRetired = iYearsRetired;

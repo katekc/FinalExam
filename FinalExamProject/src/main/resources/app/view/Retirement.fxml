@@ -57,8 +57,7 @@
             <Label text="Required Income" GridPane.rowIndex="8" />
             <Label text="Monthly SSI" GridPane.rowIndex="9" />
             
-            <Label fx:id="SaveEachMonth" GridPane.columnIndex="1" />
-            <Label fx:id="TotalSaved" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            
             <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
                <children>
                   <Button mnemonicParsing="false" onAction="#btnClear" text="Clear">
@@ -76,6 +75,8 @@
                </GridPane.margin>
             </HBox>
             
+            <TextField fx:id="SaveEachMonth" GridPane.columnIndex="1" />
+            <TextField fx:id="TotalSaved" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="txtYearsToWork" prefHeight="25.0" prefWidth="62.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtAnnualReturn" prefHeight="25.0" prefWidth="62.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="txtYearsRetired" prefHeight="25.0" prefWidth="62.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
