@@ -75,7 +75,7 @@ public class Retirement {
 		//TODO: Determine the amount to save each month based on TotalAmountSaved, YearsToWork
 		//		and Annual return while working
 		
-		return TotalAmountSaved() / (1 - Math.pow(1 + dAnnualReturnWorking/120, -iYearsToWork*12)) / dAnnualReturnWorking/120;
+		return (TotalAmountSaved() * (dAnnualReturnWorking/12)) / (Math.pow(1 + dAnnualReturnWorking/12, iYearsToWork*12) - 1);
 	}
 	
 	public double TotalAmountSaved()
@@ -83,6 +83,6 @@ public class Retirement {
 		//	TODO: Determine amount to be saved based on Monthly SSI, Required Income, Annual return during retirement
 		//		and number of years retired.
 		//
-		return 12 * iYearsRetired * (dRequiredIncome - dMonthlySSI) / Math.pow(1 + dAnnualReturnRetired/120, iYearsRetired * 12);
+		return 12 * iYearsRetired * (dRequiredIncome - dMonthlySSI) / Math.pow(1 + dAnnualReturnRetired/12, iYearsRetired * 12);
 	}
 }

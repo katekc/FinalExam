@@ -79,12 +79,15 @@ public class RetirementController implements Initializable {
 			double dAnnualReturnRetired = Double.parseDouble(txtAnnualReturnRetired.getText());
 			double dRequiredIncome = Double.parseDouble(txtRequiredIncome.getText());
 			double dMonthlySSI = Double.parseDouble(txtMonthlySSI.getText());
+			
+			if (dAnnualReturnWorking > 1 || dAnnualReturnRetired > 1)
+				throw new NumberFormatException();
 		}
 		catch (NumberFormatException e) {
 			txtYearsToWork.setText("Please clear and enter an integer");
-			txtAnnualReturn.setText("Please clear and enter a double");
+			txtAnnualReturn.setText("Please clear and enter a decimal");
 			txtYearsRetired.setText("Please clear and enter an integer");
-			txtAnnualReturnRetired.setText("Please clear and enter a double");
+			txtAnnualReturnRetired.setText("Please clear and enter a decimal");
 			txtRequiredIncome.setText("Please clear and enter a double");
 			txtMonthlySSI.setText("Please clear and enter a double");
 		}
@@ -101,8 +104,8 @@ public class RetirementController implements Initializable {
 		
 			TotalSaved.setDisable(false);
 			SaveEachMonth.setDisable(false);
-			String month = String.format("%.2f", r.AmountToSave());
-			String total = String.format("%.2f", r.TotalAmountSaved());
+			String month = String.format("$%.2f", r.AmountToSave());
+			String total = String.format("$%.2f", r.TotalAmountSaved());
 			SaveEachMonth.setText(month);
 			TotalSaved.setText(total);
 			TotalSaved.setDisable(true);
